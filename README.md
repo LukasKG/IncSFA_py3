@@ -1,9 +1,9 @@
- 
-==================================
 Incremental Slow Feature Analysis 
 ==================================
 
-Author - Varun Raj Kompella. (https://varunrajk.gitlab.io)
+Adapted to Python 3.
+
+Original Author - Varun Raj Kompella. (https://varunrajk.gitlab.io)
 
 This is a free software; you can redistribute it and/or modify it. 
 The code is distributed in the hope that it will be useful.  
