@@ -36,10 +36,11 @@ class TrainerNode(object):
           
     """
     
-    def __init__(self, ulnode, mode='Incremental', **kwargs):
+    def __init__(self, ulnode, mode='Incremental', progressbar=True, **kwargs):
         self.ulnode = ulnode
         self.mode = mode
         self.kwargs = kwargs
+        self.progressbar = progressbar
 
         self.ticker = self.kwargs.get('ticker',1000)
 
@@ -64,7 +65,7 @@ class TrainerNode(object):
     def _dataIncGen(self, x, iterval):
         totSamples = x.shape[0]*iterval
         for n in range(totSamples):
-            updateProgressBar((n+1)/float(totSamples), 'Training %s'%(type(self.ulnode).__name__), self._barLength)
+            if self.progressbar: updateProgressBar((n+1)/float(totSamples), 'Training %s'%(type(self.ulnode).__name__), self._barLength)
             i = n%x.shape[0]
             yield x[i:i+1]
 
@@ -72,14 +73,14 @@ class TrainerNode(object):
         totBlks = x.shape[0]/int(self.blkSize) + (x.shape[0]%int(self.blkSize) > 0)
         totBlks *= iterval
         for blk in range(totBlks):
-            updateProgressBar((blk+1)/float(totBlks), 'Training %s'%(type(self.ulnode).__name__), self._barLength)
+            if self.progressbar: updateProgressBar((blk+1)/float(totBlks), 'Training %s'%(type(self.ulnode).__name__), self._barLength)
             i = (blk*self.blkSize)%x.shape[0]
             yield x[i:i+self.blkSize]
 
     def _dataBatGen(self, x, iterval):
         self.ticker = x.shape[0]
         for n in range(iterval):
-            updateProgressBar((n+1)/float(iterval), 'Training %s'%(type(self.ulnode).__name__), self._barLength)
+            if self.progressbar: updateProgressBar((n+1)/float(iterval), 'Training %s'%(type(self.ulnode).__name__), self._barLength)
             yield x
             
 
