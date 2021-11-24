@@ -8,7 +8,7 @@ Signal stats node
 
 import numpy as np
 
-class signalAvgNode(object):
+class signalAvgNode:
     def __init__(self, mode='Avg', avgN=1000.):
         self.avg = 0
         self.n = 0
@@ -42,7 +42,7 @@ class signalAvgNode(object):
 
 
 
-class signalVarNode(object):
+class signalVarNode:
     def __init__(self):
         self.avg = 0.
         self.var = 0.
@@ -63,7 +63,7 @@ class signalVarNode(object):
         return np.sqrt(self.var)
 
 
-class signalDerivNode(object):
+class signalDerivNode:
     def __init__(self):
         self.xPrev = None
     

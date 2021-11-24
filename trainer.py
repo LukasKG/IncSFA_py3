@@ -20,7 +20,7 @@ def updateProgressBar(val, name, barLength):
     sys.stdout.write(text)
     sys.stdout.flush()
 
-class TrainerNode(object):
+class TrainerNode:
     """Trainer Node for UL algorithms
     
     **Inputs**
@@ -86,7 +86,7 @@ class TrainerNode(object):
 
     def train(self, x, iterval=1, **kwargs):
         assert(x.ndim >= 2)
-        print('\nTraining %s....'%(type(self.ulnode).__name__))
+        if self.progressbar: print('\nTraining %s....'%(type(self.ulnode).__name__))
         x = x.reshape(x.shape[0], np.prod(x.shape[1:]))
 
         if x.shape[0] == 1: iterval=1          #overide iterval value when input is just a single sample

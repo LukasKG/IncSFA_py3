@@ -24,7 +24,7 @@ else:
     from .ccipca import CCIPCANode, WhiteningNode
     from .mca import MCANode
 
-class IncSFANode(object):
+class IncSFANode:
     """Extract the slowly varying components from the input data incrementally.
     More information about Incremental Slow Feature Analysis can be found in
     Kompella V.R, Luciw M. and Schmidhuber J., Incremental Slow Feature Analysis:
@@ -261,7 +261,7 @@ class IncSFA2Node(IncSFANode):
         return super(IncSFA2Node,self).update(self.expnode(np.atleast_2d(x)), newEpisode)
 
     def execute(self, x):
-        return super(IncSFA2Node, self).execute(self.expnode(np.atleast_2d(x)))
+        return super(IncSFA2Node,self).execute(self.expnode(np.atleast_2d(x)))
 
 
 

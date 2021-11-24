@@ -1,4 +1,3 @@
-
 import numpy as np
 from incsfa import IncSFANode
 from trainer import TrainerNode

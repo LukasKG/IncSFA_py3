@@ -16,7 +16,7 @@ else:
     # uses current package visibility
     from .signalstats import signalAvgNode
 
-class MCANode(object):
+class MCANode:
     """Extract the minor components from the input data incrementally.
     More information about Minor Component Analysis can be found in 
     Peng, D. and Yi, Z, A new algorithm for sequential minor component analysis, 

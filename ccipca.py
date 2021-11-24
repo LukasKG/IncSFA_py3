@@ -18,7 +18,7 @@ else:
     from .signalstats import signalAvgNode
 
 
-class CCIPCANode(object):
+class CCIPCANode:
     """Extract the principal components from the input data incrementally.
     More information about Candid-Covariance free Incremental Principal Component
     Analysis can be found in Weng J., Zhang Y. and Hwang W., Candid covariance-free 
