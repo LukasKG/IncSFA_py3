@@ -26,12 +26,13 @@ Some of the terminology used in the code is inspired from MDP toolkit
 Files
 -----
 
-- ccipca.py 	: Candid Covariance-Free Incremental PCA module
-- mca.py 		: Minor Component Analysis module
-- incsfa.py 	: Incremental Slow Feature Analysis module
+- ccipca.py 	    : Candid Covariance-Free Incremental PCA module
+- mca.py 		      : Minor Component Analysis module
+- incsfa.py 	    : Incremental Slow Feature Analysis module
 - signalstats.py 	: Incremental signal stats modules 
-- trainer.py	: trainer module used for training the modules (modes: 'Incremental', 'BlockIncremental', 'Batch')
+- trainer.py	    : Trainer module used for training the modules (modes: 'Incremental', 'BlockIncremental', 'Batch')
 - test_incsfa.py	: Test example code for IncSFA
+- SFA_Node.py     : Simple-to-use interface for IncSFA
 
 Optional Dependencies
 ---------------------
